@@ -21,7 +21,7 @@ const initMatrix = () =>
         (y, index) => 
         {
             const text = String.fromCharCode(1e5 + Math.random() * 30);
-            const x = (index * 15) + 15;
+            const x = (index * 15);
             
             canvas.getContext("2d").fillText(text,x,y);
 
