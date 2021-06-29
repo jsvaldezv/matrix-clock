@@ -1,25 +1,55 @@
 const reloj = document.querySelector(".reloj");
+const hr = document.querySelector('#hr');
+const mn = document.querySelector('#mn');
+const sc = document.querySelector('#sc');
+
+const deg = 6;
 var horaGlobal = 0;
 
 const getHora = () => 
 {
-    const fecha = new Date();
+    const digital = document.querySelector('#digital');
+    let digitalStyle = window.getComputedStyle(digital);
+    let displayValue = digitalStyle.getPropertyValue('display');
 
-    const tiempo = 
+    let fecha = new Date();
+
+    if(displayValue == 'none')
     {
-        hora: fecha.getHours(),
-        minuto: fecha.getMinutes(),
-        segundo: fecha.getSeconds(),
-    };
+        let hh = fecha.getHours() * 30;
+        let mm = fecha.getMinutes() * deg;
+        let ss = fecha.getSeconds() * deg;
+        
+        //ROTAR RELOJ ANALOGO
+        hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+        mn.style.transform = `rotateZ(${(mm)}deg)`;
+        sc.style.transform = `rotateZ(${(ss)}deg)`;
 
-    reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto} : ${tiempo.segundo}`;
-    if(`${tiempo.minuto}` < 10)
+        horaGlobal = fecha.getHours();
+    }
+    else
+    {
+        //METER HORA EN CONST TIEMPO
+        const tiempo = 
+        {
+            hora: fecha.getHours(),
+            minuto: fecha.getMinutes(),
+            segundo: fecha.getSeconds(),
+        };
+
+        //PONER CEROS IZQUIERDA SI ES NECESARIO
+        if(`${tiempo.minuto}` < 10)
         tiempo.minuto = 0 + `${tiempo.minuto}`;
-    if(`${tiempo.hora}` < 10)
+        if(`${tiempo.hora}` < 10)
         tiempo.hora = 0 + `${tiempo.hora}`;
+        
+        //CAMBIAR TEXTO DE HTML
+        reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto}`;
+        //GUARDAR HORA
+        horaGlobal = `${tiempo.hora}`;
+    }
 
-    reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto}`;
-    horaGlobal = `${tiempo.hora}`;
+    //reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto} : ${tiempo.segundo}`;
 };
 
 const changeSaludo = () =>
@@ -42,5 +72,5 @@ window.onload = function()
     changeSaludo();
 };
 
-setInterval(getHora, 10000);
+setInterval(getHora, 1000);
 setInterval(changeSaludo, 3600000);
