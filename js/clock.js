@@ -9,10 +9,10 @@ const getHora = () =>
     {
         hora: fecha.getHours(),
         minuto: fecha.getMinutes(),
-        //segundo: fecha.getSeconds(),
+        segundo: fecha.getSeconds(),
     };
 
-    //reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto} : ${tiempo.segundo}`;
+    reloj.innerHTML = `${tiempo.hora} : ${tiempo.minuto} : ${tiempo.segundo}`;
     if(`${tiempo.minuto}` < 10)
         tiempo.minuto = 0 + `${tiempo.minuto}`;
     if(`${tiempo.hora}` < 10)
@@ -36,8 +36,10 @@ const changeSaludo = () =>
         saludo.innerHTML = "Buenas Noches, Jesús";
 }
 
-window.onload = function() {
+window.onload = function() 
+{
     getHora();
+    changeSaludo();
 };
 
 setInterval(getHora, 10000);
