@@ -72,15 +72,28 @@ function changeClock()
     const ana = document.querySelector('#analogo');
     const dig = document.querySelector('#digital');
 
+    //DIGITAL
     if(toggle.checked)
     {
-        ana.style.display = 'none';
-        dig.style.display = 'block';
+        ana.style.animationName = 'bounceOutRight';
+        dig.style.animationName = 'bounceInLeft';
+
+        setTimeout(() => {
+            ana.style.display = 'none';
+            dig.style.display = 'block';
+        }, 800);
+        
         getHora();
     }
+    //ANALOG
     else{
-        dig.style.display = 'none';
-        ana.style.display = 'block';
+        dig.style.animationName = 'bounceOutRight';
+        ana.style.animationName = 'bounceInLeft';
+ 
+        setTimeout(() => {
+            dig.style.display = 'none';
+            ana.style.display = 'block';
+         }, 800);
     }
 }
 

@@ -204,3 +204,42 @@ input:checked[type="checkbox"]::before{
     z-index: 12;
     border-radius: 6px;
 }
+/* COLORES */
+.colores{
+    display: block;
+    position: absolute;
+    top: 30vh;
+    left: 96vw;
+}
+.red, .blue, .green, .yellow, .pink, .purple, .orange{
+    width: 30px;
+    height: 30px;
+    margin: 3px 3px;
+    border: none;
+    border-radius:20%;
+}
+.red:hover, .blue:hover, .green:hover, .yellow:hover, .pink:hover, .purple:hover, .orange:hover{
+    filter: opacity(70%);
+    cursor: pointer;
+}
+.red{
+    background-color: #FF0000;
+}
+.blue{
+    background-color: #0049FF;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: #FFFB00;
+}
+.pink{
+    background-color: #E400FF;
+}
+.orange{
+    background-color: #FF9700;
+}
+.purple{
+    background-color: #4D00FF;
+}
