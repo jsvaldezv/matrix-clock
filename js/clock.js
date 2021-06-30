@@ -2,6 +2,7 @@ const reloj = document.querySelector(".reloj");
 const hr = document.querySelector('#hr');
 const mn = document.querySelector('#mn');
 const sc = document.querySelector('#sc');
+const toggle = document.querySelector('.toggle');
 
 const deg = 6;
 var horaGlobal = 0;
@@ -66,7 +67,23 @@ const changeSaludo = () =>
         saludo.innerHTML = "Buenas Noches, Jesús";
 }
 
-window.onload = function() 
+function changeClock()
+{
+    const ana = document.querySelector('#analogo');
+    const dig = document.querySelector('#digital');
+
+    if(toggle.checked)
+    {
+        ana.style.display = 'none';
+        dig.style.display = 'block';
+    }
+    else{
+        dig.style.display = 'none';
+        ana.style.display = 'block';
+    }
+}
+
+window.onload = function()
 {
     getHora();
     changeSaludo();
@@ -74,3 +91,4 @@ window.onload = function()
 
 setInterval(getHora, 1000);
 setInterval(changeSaludo, 3600000);
+toggle.addEventListener('click', changeClock);
