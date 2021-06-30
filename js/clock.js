@@ -76,6 +76,7 @@ function changeClock()
     {
         ana.style.display = 'none';
         dig.style.display = 'block';
+        getHora();
     }
     else{
         dig.style.display = 'none';
