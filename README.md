@@ -4,4 +4,4 @@
 
 Basic digital and analog clock with matrix style, you can change the color and clock mode.
 
-Demo: https://jsvaldezv.github.io/Matrix_Clock/
+Demo: https://jsvaldezv.github.io/matrix-clock/
