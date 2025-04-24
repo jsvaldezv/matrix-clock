@@ -1,6 +1,6 @@
 # Matrix-Style Digital & Analog Clock
 
-<img width="1380" alt="matrix" src="https://user-images.githubusercontent.com/47612276/143804834-58818298-68cc-4364-bb0c-610682181c9b.png">
+https://github.com/user-attachments/assets/0f3d32a5-002b-406b-8c7b-ad145261857d
 
 A basic digital and analog clock built with vanilla JavaScript, HTML, and CSS, featuring a sleek Matrix-inspired design. The clock allows you to switch between digital and analog modes and customize the display color for a personalized look.
 
